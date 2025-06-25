@@ -14,7 +14,10 @@ class EcommerceApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => GetProductCubit()..getProducts(),
-      child: const MaterialApp(debugShowCheckedModeBanner: false, home: HomePage()),
+      child: const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: HomePage(),
+      ),
     );
   }
 }

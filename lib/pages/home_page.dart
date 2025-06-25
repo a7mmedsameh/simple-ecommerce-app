@@ -15,7 +15,10 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         scrolledUnderElevation: 0,
         backgroundColor: const Color(0xff366291),
-        title: const Text(style: TextStyle(color: Colors.white), 'Ecommerce App'),
+        title: const Text(
+          style: TextStyle(color: Colors.white),
+          'Ecommerce App',
+        ),
         actions: [
           IconButton(
             icon: const Icon(Icons.refresh, color: Colors.white),
@@ -28,7 +31,6 @@ class HomePage extends StatelessWidget {
       body: Stack(
         children: [
           BlocBuilder<GetProductCubit, ProductState>(
-            
             builder: (context, state) {
               if (state is ProductLoadinState) {
                 return const Center(child: CircularProgressIndicator());
@@ -41,7 +43,7 @@ class HomePage extends StatelessWidget {
               }
             },
           ),
-           const PositionedForAdd(),
+          const PositionedForAdd(),
         ],
       ),
     );

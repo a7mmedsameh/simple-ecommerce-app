@@ -36,11 +36,17 @@ class AddAndEditProduct extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.only(top: 16),
-              child: CustomTextField(controller: titleController, hintText: 'Title'),
+              child: CustomTextField(
+                controller: titleController,
+                hintText: 'Title',
+              ),
             ),
             Padding(
               padding: const EdgeInsets.only(top: 16),
-              child: CustomTextField(controller: priceController, hintText: 'Price'),
+              child: CustomTextField(
+                controller: priceController,
+                hintText: 'Price',
+              ),
             ),
             Padding(
               padding: const EdgeInsets.only(top: 16),

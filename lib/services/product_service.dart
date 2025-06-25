@@ -5,9 +5,7 @@ class ProductService {
   final ApiService apiService = ApiService();
 
   Future<List<ProductModel>> getProducts() async {
-    final data = await apiService.get(
-      endPoint: '/products',
-    );
+    final data = await apiService.get(endPoint: '/products');
     List<ProductModel> productModel =
         (data as List).map((item) => ProductModel.fromJson(item)).toList();
     return productModel;
@@ -31,8 +29,7 @@ class ProductService {
     return productModel;
   }
 
-    Future<void> deleteProduct(int id) async {
+  Future<void> deleteProduct(int id) async {
     await apiService.delete(endPoint: '/products/$id');
   }
-
 }

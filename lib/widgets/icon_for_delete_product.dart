@@ -41,7 +41,9 @@ class IconForDeleteProduct extends StatelessWidget {
                     ),
                     TextButton(
                       onPressed: () {
-                        context.read<GetProductCubit>().deleteProducts(productModel.id!);
+                        context.read<GetProductCubit>().deleteProducts(
+                          productModel.id!,
+                        );
                         Navigator.of(context).pop();
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
