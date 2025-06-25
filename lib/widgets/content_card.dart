@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project_9/models/product_model.dart';
-import 'package:project_9/widgets/custom_gesture_detector_change.dart';
+import 'package:project_9/widgets/custom_gesture_detector_edit.dart';
 
 class ContentCard extends StatelessWidget {
   const ContentCard({super.key, required this.productModel});
@@ -36,7 +36,7 @@ class ContentCard extends StatelessWidget {
               fontWeight: FontWeight.w500,
             ),
           ),
-          CustomGestureDetectorChange(productModel: productModel),
+          CustomGestureDetectorEdit(productModel: productModel),
         ],
       ),
     );

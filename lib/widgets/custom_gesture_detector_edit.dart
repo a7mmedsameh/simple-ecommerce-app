@@ -4,8 +4,8 @@ import 'package:project_9/cubits/get_product_cubit/get_product_cubit.dart';
 import 'package:project_9/models/product_model.dart';
 import 'package:project_9/pages/add_and_edit_product.dart';
 
-class CustomGestureDetectorChange extends StatelessWidget {
-  const CustomGestureDetectorChange({super.key, required this.productModel});
+class CustomGestureDetectorEdit extends StatelessWidget {
+  const CustomGestureDetectorEdit({super.key, required this.productModel});
 
   final ProductModel productModel;
 
