@@ -7,7 +7,6 @@ class ProductService {
   Future<List<ProductModel>> getProducts() async {
     final data = await apiService.get(
       endPoint: '/products',
-      queryParameters: {'limit': 6},
     );
     List<ProductModel> productModel =
         (data as List).map((item) => ProductModel.fromJson(item)).toList();
