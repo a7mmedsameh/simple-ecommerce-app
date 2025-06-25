@@ -28,23 +28,26 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      body: Stack(
-        children: [
-          BlocBuilder<GetProductCubit, ProductState>(
-            builder: (context, state) {
-              if (state is ProductLoadinState) {
-                return const Center(child: CircularProgressIndicator());
-              } else if (state is ProductSuccesLoadState) {
-                return CustomGridveiwBuilder(products: state.productModel);
-              } else if (state is ProductErrorState) {
-                return Center(child: Text('Error: ${state.error}'));
-              } else {
-                return const SizedBox();
-              }
-            },
-          ),
-          const PositionedForAdd(),
-        ],
+      body: SizedBox(
+        height: double.infinity,
+        child: Stack(
+          children: [
+            BlocBuilder<GetProductCubit, ProductState>(
+              builder: (context, state) {
+                if (state is ProductLoadinState) {
+                  return const Center(child: CircularProgressIndicator());
+                } else if (state is ProductSuccesLoadState) {
+                  return CustomGridveiwBuilder(products: state.productModel);
+                } else if (state is ProductErrorState) {
+                  return Center(child: Text('Error: ${state.error}'));
+                } else {
+                  return const SizedBox();
+                }
+              },
+            ),
+            const PositionedForAdd(),
+          ],
+        ),
       ),
     );
   }
