@@ -26,20 +26,20 @@ class GetProductCubit extends Cubit<ProductState> {
     }
   }
 
-  void deleteProducts(int id) async {
+  void updateProducts(ProductModel product) async {
     emit(ProductLoadinState());
     try {
-      await ProductService().deleteProduct(id);
+      await ProductService().updateProduct(product);
       getProducts();
     } catch (e) {
       emit(ProductErrorState(e.toString()));
     }
   }
 
-  void updateProducts(ProductModel product) async {
+  void deleteProducts(int id) async {
     emit(ProductLoadinState());
     try {
-      await ProductService().updateProduct(product);
+      await ProductService().deleteProduct(id);
       getProducts();
     } catch (e) {
       emit(ProductErrorState(e.toString()));
