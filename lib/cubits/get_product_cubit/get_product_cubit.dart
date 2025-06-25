@@ -5,11 +5,11 @@ import 'package:project_9/services/product_service.dart';
 
 class GetProductCubit extends Cubit<ProductState> {
   GetProductCubit() : super(ProductLoadinState());
-
+  final ProductService productService = ProductService();
   void getProducts() async {
     emit(ProductLoadinState());
     try {
-      List<ProductModel> productModel = await ProductService().getProducts();
+      List<ProductModel> productModel = await productService.getProducts();
       emit(ProductSuccesLoadState(productModel));
     } catch (e) {
       emit(ProductErrorState(e.toString()));
@@ -19,7 +19,7 @@ class GetProductCubit extends Cubit<ProductState> {
   void createProducts(ProductModel product) async {
     emit(ProductLoadinState());
     try {
-      await ProductService().createProduct(product);
+      await productService.createProduct(product);
       getProducts();
     } catch (e) {
       emit(ProductErrorState(e.toString()));
@@ -29,7 +29,7 @@ class GetProductCubit extends Cubit<ProductState> {
   void updateProducts(ProductModel product) async {
     emit(ProductLoadinState());
     try {
-      await ProductService().updateProduct(product);
+      await productService.updateProduct(product);
       getProducts();
     } catch (e) {
       emit(ProductErrorState(e.toString()));
@@ -39,7 +39,7 @@ class GetProductCubit extends Cubit<ProductState> {
   void deleteProducts(int id) async {
     emit(ProductLoadinState());
     try {
-      await ProductService().deleteProduct(id);
+      await productService.deleteProduct(id);
       getProducts();
     } catch (e) {
       emit(ProductErrorState(e.toString()));
